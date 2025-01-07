@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: chatWhatsApp
+  profiles:
+    active: ${APP_PROFILE:test}
+  output:
+    ansi:
+      enabled: ALWAYS
+server:
+  port: 8082
