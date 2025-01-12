@@ -33,6 +33,12 @@ public class WebhookController {
         return ResponseEntity.ok("OK");
     }
 
+    @PostMapping("/contacts-upsert")
+    public ResponseEntity<String> handleContactUpSert(@RequestBody String body) {
+        chatService.handleContactUpSert(body);
+        return ResponseEntity.ok("OK");
+    }
+
     @PostMapping("/messages-upsert")
     public ResponseEntity<String> processMessage(@RequestBody String body) {
         chatService.processMessage(body);

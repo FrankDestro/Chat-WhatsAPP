@@ -8,3 +8,7 @@ spring:
       enabled: ALWAYS
 server:
   port: 8082
+
+EVOLUTION_API_URL: http://localhost:8080
+EVOLUTION_API_KEY: mktpqvbr5aqhru6da7vvbi
+EVOLUTION_API_INSTANCE: chat

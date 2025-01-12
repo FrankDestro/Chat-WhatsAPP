@@ -10,11 +10,11 @@ public class ChatService {
     private final MenuFlowService menuFlowService;
 
     public void handlePresenceUpdate(String body) {
-//        System.out.println("Presence update received: " + body);
+        System.out.println("Presence update received: " + body);
     }
 
     public void handleContactsUpdate(String body) {
-       menuFlowService.processContactUpdate(body);
+//       menuFlowService.processContactUpdate(body);
     }
 
     public void handleChatsUpdate(String body) {
@@ -27,5 +27,9 @@ public class ChatService {
 
     public void handleMessageUpdate(String body) {
 //        System.out.println("Message chat update bot: " + body);
+    }
+
+    public void handleContactUpSert(String body) {
+//        System.out.println(body);
     }
 }

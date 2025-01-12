@@ -12,13 +12,16 @@ public class ContactService {
     private final ClientRepository clientRepository;
     private final ContactDataProcessor contactDataProcessor;
 
-    public void processContact(String body) {
-        Client client = contactDataProcessor.extractClientFromJson(body);
-
+    public void saveContactBase(Client client) {
         clientRepository.findById(Long.valueOf(client.getId()))
                 .ifPresentOrElse(
-                        existingClient -> {},
-                        () -> clientRepository.save(client)
+                        existingClient -> {
+                            System.out.println("Cliente encontrado: " + existingClient.getId());
+                        },
+                        () -> {
+                            System.out.println("Cliente não encontrado. Salvando...");
+                            clientRepository.save(client);
+                        }
                 );
     }
 }
